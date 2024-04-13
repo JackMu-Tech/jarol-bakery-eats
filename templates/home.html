@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <!-- First Sliding Section: Featured Products or Special Offers -->
+    <div id="featured-products-carousel" class="carousel slide mb-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#featured-products-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#featured-products-carousel" data-slide-to="1"></li>
+            <li data-target="#featured-products-carousel" data-slide-to="2"></li>
+            <li data-target="#featured-products-carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/1.jpeg' %}" class="d-block w-100" alt="First Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/2.jpeg' %}" class="d-block w-100" alt="Second Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/3.jpeg' %}" class="d-block w-100" alt="Third Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/4.jpeg' %}" class="d-block w-100" alt="Fourth Slide" style="max-height: 400px;">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#featured-products-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#featured-products-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Welcome Message with Jumbotron -->
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Jarol Bakery Eats!</h1>
+        <p class="lead">Indulge in our delightful baked goods made with love and passion.</p>
+        <hr class="my-4">
+        <p>Explore our featured products below and treat yourself to something special.</p>
+    </div>
+
+    <!-- Second Sliding Section: Customer Testimonials or Reviews -->
+    <div id="testimonials-carousel" class="carousel slide mb-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#testimonials-carousel" data-slide-to="1"></li>
+            <li data-target="#testimonials-carousel" data-slide-to="2"></li>
+            <li data-target="#testimonials-carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="testimonial">
+                    <p><span style="font-style: italic; font-weight: bold; color: #ff0000; background-color: #ffe6e6;">"The cakes from Jarol Bakery Eats are absolutely divine! Highly recommend!"</span></p>
+                    <p class="author">- Emily Johnson</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonial">
+                    <p><span style="font-style: italic; font-weight: bold; color: #00ff00; background-color: #e6ffe6;">"I've never tasted bread as fresh and delicious as the ones from Jarol Bakery Eats!"</span></p>
+                    <p class="author">- Michael Smith</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonial">
+                    <p><span style="font-style: italic; font-weight: bold; color: #0000ff; background-color: #e6e6ff;">"The pastries here are to die for! Can't get enough of them!"</span></p>
+                    <p class="author">- Sarah Brown</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonial">
+                    <p><span style="font-style: italic; font-weight: bold; color: #ff00ff; background-color: #ffe6ff;">"Jarol Bakery Eats has become my go-to place for all things baked! Love their products!"</span></p>
+                    <p class="author">- David Wilson</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimonials-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimonials-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Featured Products Section -->
+    <section class="mb-5">
+        <h2 class="mb-4">Featured Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'images/1.jpeg' %}" class="card-img-top" alt="Delicious Cakes">
+                    <div class="card-body">
+                        <h5 class="card-title">Delicious Cakes</h5>
+                        <p class="card-text">Explore our wide range of mouth-watering cakes</p>
+                        <a href="{% url 'products:product_list' %}" class="btn btn-primary">View Cakes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'images/4.jpeg' %}" class="card-img-top" alt="Fresh Bread">
+                    <div class="card-body">
+                        <h5 class="card-title">Fresh Bread</h5>
+                        <p class="card-text">Discover our assortment of freshly baked breads.</p>
+                        <a href="{% url 'products:product_list' %}" class="btn btn-primary">View Breads</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{% static 'images/7.jpeg' %}" class="card-img-top" alt="Tasty Pastries">
+                    <div class="card-body">
+                        <h5 class="card-title">Tasty Pastries</h5>
+                        <p class="card-text">Indulge in our delectable pastry collection.</p>
+                        <a href="{% url 'products:product_list' %}" class="btn btn-primary">View Pastries</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Sliding Section: About Us or Behind-the-Scenes -->
+    <div id="about-us-carousel" class="carousel slide mb-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#about-us-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#about-us-carousel" data-slide-to="1"></li>
+            <li data-target="#about-us-carousel" data-slide-to="2"></li>
+            <li data-target="#about-us-carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/15.jpeg' %}" class="d-block w-100" alt="First Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/14.jpeg' %}" class="d-block w-100" alt="Second Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/12.jpeg' %}" class="d-block w-100" alt="Third Slide" style="max-height: 400px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/18.jpeg' %}" class="d-block w-100" alt="Fourth Slide" style="max-height: 400px;">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#about-us-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#about-us-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Special Offers or Promotions Section -->
+<section class="special-offers-section mb-5">
+    <div class="container">
+        <h2 class="mb-4">Special Offers</h2>
+        <div class="row">
+            <!-- Offer Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card offer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">25% Off All Cakes</h5>
+                        <p class="card-text">Get 25% off on all cakes for a limited time.</p>
+                        <p class="card-text"><small class="text-muted">Terms and conditions apply.</small></p>
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Offer Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card offer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Free Delivery</h5>
+                        <p class="card-text">Enjoy free delivery on orders over $50.</p>
+                        <p class="card-text"><small class="text-muted">Limited time offer.</small></p>
+                        <!-- Bootstrap Delivery Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                            <path d="M0 10v3a2 2 0 0 0 2 2h11.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-1-1v-4H0zm13.5-6.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h12zm-1.44-4.126l-1.96-.784a1 1 0 0 0-.557-.114L9 1H2a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1h1a2 2 0 0 0 2-2V3a1.5 1.5 0 0 0-2.94-.438l-.94.375a.5.5 0 1 1-.394-.916l.94-.375A1.5 1.5 0 0 1 12 1.5h1.34a.5.5 0 0 1 .36.874zM3 12a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm6-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3-5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Offer Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card offer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Buy One Get One Free</h5>
+                        <p class="card-text">Buy one pastry and get another one free.</p>
+                        <p class="card-text"><small class="text-muted">Offer valid on select items.</small></p>
+                        <a href="#" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Newsletter Signup Section -->
+<section class="newsletter-signup-section bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay up-to-date with our latest offers, news, and events by subscribing to our newsletter.</p>
+            </div>
+            <div class="col-md-6">
+                <form action="#" method="post" class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email address" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Social Media Integration Section -->
+<section class="social-media-section bg-dark py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center text-white">
+                <h2>Follow Us on Social Media</h2>
+                <p>Stay updated with our latest news, promotions, and behind-the-scenes content by connecting with us on social media.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6 text-center">
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/Mukisa Jack" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="https://twitter.com/Carol2874Kasewa" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://instagram.com/jackmu789" class="text-white"><i class="fab fa-instagram"></i></a></li>
+
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Additional Customer Reviews Section -->
+<section class="additional-reviews-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Customers Say</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-card text-center p-4">
+                    <img src="{% static 'images/mum.jpg' %}" alt="Customer 1" class="customer-img img-fluid mb-3 animated fadeInLeft">
+                    <p class="mb-4">"The cupcakes here are simply amazing! So moist and flavorful. I always come back for more!"</p>
+                    <p class="testimonial-author">- Mrs Lilian</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card text-center p-4">
+                    <img src="{% static 'images/friends.jpg' %}" alt="Customer 2" class="customer-img img-fluid mb-3 animated fadeInUp">
+                    <p class="mb-4">"I ordered a custom cake for my daughter's birthday, and it exceeded my expectations! It looked beautiful and tasted delicious!"</p>
+                    <p class="testimonial-author">- Dante Henry</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card text-center p-4">
+                    <img src="{% static 'images/muko.jpg' %}" alt="Customer 3" class="customer-img img-fluid mb-3 animated fadeInRight">
+                    <p class="mb-4">"The croissants are to die for! Crispy on the outside, soft and buttery on the inside. Perfect with my morning coffee!"</p>
+                    <p class="testimonial-author">- Kase Bro</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</div>
+
+<!-- JavaScript for Smooth Scrolling -->
+<script>
+    $(document).ready(function(){
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+    });
+</script>
+{% endblock %}

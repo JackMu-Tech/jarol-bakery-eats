@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Order Confirmation</h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Thank you for your order!</h5>
+      <p class="card-text">Your order has been successfully placed.</p>
+      <!-- Display order details -->
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Order Summary</h6>
+          <p>Total Items: 3</p>
+          <p>Total Amount: $50.00</p>
+          <!-- Add more order details as needed -->
+        </div>
+        <div class="col-md-6">
+          <h6>Shipping Information</h6>
+          <p>Anyama Dante</p>
+          <p>123 Shipping Street</p>
+          <p>North Arua, NA 10001</p>
+          <!-- Add more shipping information fields as needed -->
+        </div>
+      </div>
+      <hr>
+      <p class="card-text">Your order will be processed shortly and you will receive a confirmation email.</p>
+      <p class="card-text">If you have any questions or concerns, please contact our support team.</p>
+      <a href="{% url 'home' %}" class="btn btn-primary"><i class="bi bi-house"></i> Return to Homepage</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

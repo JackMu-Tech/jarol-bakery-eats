@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Checkout</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Shipping Information</h5>
+          <form>
+            <!-- Shipping address form fields -->
+            <div class="form-group">
+              <label for="address">Address Line 1</label>
+              <input type="text" class="form-control" id="address" name="address" required>
+            </div>
+            <!-- Add more address fields as needed -->
+
+            <button type="submit" class="btn btn-primary">Continue to Billing</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Order Summary</h5>
+          <!-- Display order summary details -->
+          <p>Total Items: 3</p>
+          <p>Total Amount: $50.00</p>
+          <hr>
+          <p class="card-text">You're just a few steps away from completing your order.</p>
+          <p class="card-text">Please fill in your shipping information to proceed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

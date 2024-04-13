@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Order History</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="list-group">
+        {% for order in orders %}
+        <li class="list-group-item">Order #{{ order.id }} - Total: ${{ order.total_amount }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

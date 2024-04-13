@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Your Shopping Cart</h1>
+  <div class="row">
+    {% if cart.items.all %}
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header">
+          Cart Items
+        </div>
+        <ul class="list-group list-group-flush">
+          {% for item in cart.items.all %}
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5 class="card-title">{{ item.product.name }}</h5>
+                <p class="card-text">Quantity: {{ item.quantity }}</p>
+                <p class="card-text">Price: ${{ item.product.price }}</p>
+              </div>
+              <div class="col-md-3">
+                <a href="{% url 'cart:remove_from_cart' item.id %}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          Cart Summary
+        </div>
+        <div class="card-body">
+          <p class="card-text">Total Items: {{ cart.total.total_items }}</p>
+          <p class="card-text">Total Amount: ${{ cart.total.total_amount }}</p>
+        </div>
+        <div class="card-footer">
+          <a href="{% url 'checkout:checkout' %}" class="btn btn-primary"><i class="bi bi-cart-check"></i> Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="col">
+      <p>Your cart is empty.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

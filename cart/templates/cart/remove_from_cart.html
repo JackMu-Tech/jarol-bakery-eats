@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Remove from Cart</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ item.product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.product.name }}</h5>
+          <p class="card-text">Price: ${{ item.product.price }}</p>
+          <p class="card-text">Quantity: {{ item.quantity }}</p>
+          <form action="{% url 'cart:remove_from_cart' item.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+              <i class="bi bi-cart-x"></i> Remove from Cart
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

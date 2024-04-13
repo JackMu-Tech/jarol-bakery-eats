@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2>Company Information</h2>
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">{{ company_info.name }}</h5>
+      <p class="card-text">{{ company_info.description }}</p>
+      <ul class="list-group">
+        <li class="list-group-item">Address: {{ company_info.address }}</li>
+        <li class="list-group-item">Phone: {{ company_info.phone }}</li>
+        <li class="list-group-item">Email: {{ company_info.email }}</li>
+      </ul>
+      <div class="btn-group">
+        {% if member %}
+          <a href="{% url 'about_us:team_member_detail' member.pk %}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> View Profile</a>
+        {% endif %}
+      </div>
+      <a href="{% url 'about_us:edit_company_info' %}" class="btn btn-primary mt-3">Edit</a>
+    </div>
+  </div>
+  
+</div>
+{% endblock %}
